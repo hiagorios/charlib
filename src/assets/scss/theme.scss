@@ -1,0 +1,26 @@
+:root {
+  --color-primary: #2b2d42;
+  --color-secondary: #6b818c;
+  --color-light: #edf2f4;
+  --color-red: #ef233c;
+  --color-red-dark: #d90429;
+  --text-light: #ffffff;
+  --text-light-gray: #6b818c;
+  --color-light-translucid: #edf2f480;
+
+  .p-button {
+    color: var(--text-light);
+    &:focus {
+      box-shadow: 0 0 0 0.2rem var(--color-secondary);
+    }
+    &:enabled {
+      &:hover {
+        color: var(--text-light-gray);
+      }
+      &:active {
+        background: var(--color-light-translucid);
+        color: var(--text-light-gray);
+      }
+    }
+  }
+}

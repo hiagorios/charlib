@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@import "assets/scss/reset.scss";
+@import "assets/scss/fonts.scss";
+@import "assets/scss/theme.scss";
+
+html {
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  color: var(--text-light);
+}
