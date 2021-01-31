@@ -1,0 +1,28 @@
+:host {
+  .sidebar-section-header {
+    background-color: var(--color-secondary);
+    padding: 0 0.5rem;
+    height: 2rem;
+  }
+  .sidebar-section-content {
+    .sidebar-section-group-header {
+      color: var(--text-light-gray);
+      padding: 0 0.5rem;
+      height: 2rem;
+    }
+    .sidebar-section-group-item {
+      padding: 0 2rem;
+      height: 2rem;
+    }
+  }
+}
+
+:host ::ng-deep {
+  .p-button {
+    background-color: transparent;
+    border: none;
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}

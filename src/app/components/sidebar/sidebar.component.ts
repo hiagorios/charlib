@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SidebarSection } from './sidebar-section/model/sidebar-section';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,9 +8,41 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
+  sections: SidebarSection[] = [
+    {
+      headerText: 'FICHAS',
+      isOpen: true,
+      groups: [
+        {
+          name: 'D&D',
+          content: ['Carlos Magno', 'Muriel']
+        },
+        {
+          name: 'FATE',
+          content: ['Chico Bruno', 'Dremmor', 'Arthur']
+        }
+      ]
+    },
+    {
+      headerText: 'IMAGENS',
+      isOpen: true,
+      groups: [
+        {
+          name: 'PokeUESC',
+          content: ['Pikachu capiroto', 'NPC 1']
+        },
+        {
+          name: 'Usar algum dia',
+          content: ['Biel desenho', 'Paladino cyberpunk']
+        }
+      ]
+    }
+  ]
+
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }
