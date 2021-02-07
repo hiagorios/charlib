@@ -7,18 +7,20 @@
 
   #main-container {
     display: flex;
-    height: calc(100% - 1rem);
-    width: calc(100% - 1rem);
+    flex: 1;
     margin-bottom: 1rem;
     margin-right: 1rem;
+    overflow: hidden;
     app-sidebar {
       margin-right: 1rem;
-      width: 15%;
+      flex: 0.2;
+      overflow: auto;
     }
     main#main-view {
       background-color: var(--color-light);
-      border-radius: 15px;
+      border-radius: var(--default-border-radius);
       flex-grow: 1;
+      overflow: auto;
     }
   }
 }

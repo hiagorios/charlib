@@ -1,3 +1,5 @@
-<ng-container *ngFor="let section of sections">
-  <app-sidebar-section [isOpen]="section.isOpen" [headerText]="section.headerText" [groups]="section.groups"></app-sidebar-section>
-</ng-container>
+<div class="sidebar-wrapper">
+  <ng-container *ngFor="let section of sections">
+    <app-sidebar-section [isOpen]="section.isOpen" [headerText]="section.headerText" [groups]="section.groups"></app-sidebar-section>
+  </ng-container>
+</div>
