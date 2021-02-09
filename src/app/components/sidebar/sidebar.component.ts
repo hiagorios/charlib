@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SidebarSection } from './sidebar-section/model/sidebar-section';
+import { SidebarSection } from './model/sidebar-section';
 
 @Component({
   selector: 'app-sidebar',
@@ -11,7 +11,7 @@ export class SidebarComponent implements OnInit {
   sections: SidebarSection[] = [
     {
       headerText: 'FICHAS',
-      isOpen: true,
+      isExpanded: true,
       groups: [
         {
           name: 'D&D',
@@ -25,7 +25,7 @@ export class SidebarComponent implements OnInit {
     },
     {
       headerText: 'IMAGENS',
-      isOpen: true,
+      isExpanded: true,
       groups: [
         {
           name: 'PokeUESC',

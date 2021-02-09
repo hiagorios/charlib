@@ -2,6 +2,6 @@ import { SidebarGroupedContent } from "./sidebar-grouped-content";
 
 export interface SidebarSection {
   headerText: string;
-  isOpen: boolean;
+  isExpanded: boolean;
   groups: SidebarGroupedContent[];
 }

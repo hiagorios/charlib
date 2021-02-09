@@ -1,0 +1,13 @@
+<div class="sidebar-section-group-header p-d-flex p-ai-center p-jc-between">
+  <em class="pi pi-play"></em>
+  <strong class="p-text-bold">{{name}}</strong>
+  <button (click)="createSheet()" type="button" pButton icon="pi pi-plus" iconPos="left" class="p-button-rounded" styleClass="add-button">
+  </button>
+</div>
+<ul>
+  <li *ngFor="let item of content" class="sidebar-section-group-item">
+    {{item}}
+  </li>
+</ul>
+
+<app-create-sheet [visible]="isCreating"></app-create-sheet>

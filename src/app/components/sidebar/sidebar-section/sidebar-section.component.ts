@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { SidebarGroupedContent } from './model/sidebar-grouped-content';
+import { SidebarGroupedContent } from '../model/sidebar-grouped-content';
 
 @Component({
   selector: 'app-sidebar-section',
@@ -9,10 +9,10 @@ import { SidebarGroupedContent } from './model/sidebar-grouped-content';
 export class SidebarSectionComponent implements OnInit {
 
   @Input()
-  isOpen = false;
+  isExpanded = false;
 
   @Input()
-  headerText: string = 'HEADER';
+  headerText: string;
 
   @Input()
   groups: SidebarGroupedContent[];
@@ -20,6 +20,18 @@ export class SidebarSectionComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  clickHeader() {
+    // TODO
+  }
+
+  createGroup() {
+    // TODO
+  }
+
+  toggleExpanded() {
+    this.isExpanded = !this.isExpanded;
   }
 
 }

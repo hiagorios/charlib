@@ -1,21 +1,14 @@
 <div class="sidebar-section-header p-d-flex p-ai-center p-jc-between">
-  <em class="pi pi-play"></em>
+  <button (click)="toggleExpanded()" type="button" pButton icon="pi pi-play" iconPos="left" class="p-button-rounded"
+    styleClass="add-button">
+  </button>
   <strong class="p-text-bold">{{headerText}}</strong>
-  <button type="button" pButton icon="pi pi-plus" iconPos="left" class="p-button-rounded" styleClass="add-button">
+  <button (click)="createGroup()" type="button" pButton icon="pi pi-plus" iconPos="left" class="p-button-rounded"
+    styleClass="add-button">
   </button>
 </div>
 <div class="sidebar-section-content">
   <ng-container *ngFor="let group of groups">
-    <div class="sidebar-section-group-header p-d-flex p-ai-center p-jc-between">
-      <em class="pi pi-play"></em>
-      <strong class="p-text-bold">{{group.name}}</strong>
-      <button type="button" pButton icon="pi pi-plus" iconPos="left" class="p-button-rounded" styleClass="add-button">
-      </button>
-    </div>
-    <ul>
-      <li *ngFor="let item of group.content" class="sidebar-section-group-item">
-        {{item}}
-      </li>
-    </ul>
+    <app-sidebar-section-group [name]="group.name" [content]="group.content"></app-sidebar-section-group>
   </ng-container>
 </div>
