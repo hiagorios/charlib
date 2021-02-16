@@ -1,16 +1,20 @@
-<p-dialog [(visible)]="visible" [draggable]="false" [resizable]="false" [modal]="true">
+<p-dialog [(visible)]="visible" [draggable]="false" [resizable]="false" [modal]="true" (onHide)="handleClose()">
   <ng-template pTemplate="header">
     New sheet
   </ng-template>
-  <form [formGroup]="sheetForm">
-    <div class="p-d-flex p-flex-column p-jc-around">
-      <input id="float-input" type="text" pInputText placeholder="Sheet name">
-      <p-dropdown [options]="sheetTypeOptions" formControlName="type" optionLabel="name" optionValue="code">
+  <form [formGroup]="sheetForm" class="p-fluid">
+    <div class="p-field">
+      <label for="inputSheetName">Sheet name</label>
+      <input id="inputSheetName" type="text" pInputText formControlName="name">
+    </div>
+    <div class="p-field">
+      <label for="dropdownSheetType">Sheet type</label>
+      <p-dropdown id="dropdownSheetType" appendTo="body" [options]="sheetTypeOptions" formControlName="type" optionLabel="name" optionValue="code">
       </p-dropdown>
     </div>
   </form>
   <p-footer class="p-d-flex p-ai-center p-jc-between">
-    <button pButton class="p-button-info" type="button" label="Nevermind"></button>
+    <button (click)="handleClose()" pButton class="p-button-info" type="button" label="Nevermind"></button>
     <button pButton type="button" label="Create"></button>
   </p-footer>
 </p-dialog>

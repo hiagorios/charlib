@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { SidebarSectionType } from '../model/sidebar-section';
 
 @Component({
   selector: 'app-sidebar-section-group',
@@ -16,20 +17,27 @@ export class SidebarSectionGroupComponent implements OnInit {
   @Input()
   content: string;
 
-  isCreating = false;
+  @Input()
+  type: SidebarSectionType;
+
+  isAdding = false;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  createSheet(): void {
-    this.isCreating = true;
-    // TODO
+  addHandler(): void {
+    this.isAdding = true;
   }
 
   toggleExpanded(): void {
     this.isExpanded = !this.isExpanded;
+    console.log(this.isAdding);
+  }
+
+  isSheetGroup(): boolean {
+    return this.type === 'SHEET';
   }
 
 }

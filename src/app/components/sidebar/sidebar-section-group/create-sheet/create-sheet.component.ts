@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SheetType } from 'src/app/enum/SheetType';
 
@@ -14,8 +15,9 @@ interface SheetTypeOption {
 })
 export class CreateSheetComponent implements OnInit {
 
-  // TODO: fix two way binding
   @Input() visible: boolean;
+
+  @Output() closeDialog: EventEmitter<boolean> = new EventEmitter();
 
   sheetForm: FormGroup;
 
@@ -25,10 +27,7 @@ export class CreateSheetComponent implements OnInit {
 
   ngOnInit(): void {
     this.sheetTypeOptions = this.getSheetTypeOptions();
-    this.sheetForm = this.formBuilder.group({
-      name: ['', [Validators.required]],
-      type: [undefined, [Validators.required]]
-    });
+    this.initializeForm();
   }
 
   getSheetTypeOptions(): SheetTypeOption[] {
@@ -39,6 +38,18 @@ export class CreateSheetComponent implements OnInit {
 
   save(): void {
     // TODO: use a state management library
+  }
+
+  handleClose(): void {
+    this.sheetForm.reset();
+    this.closeDialog.emit(false);
+  }
+
+  initializeForm(): void {
+    this.sheetForm = this.formBuilder.group({
+      name: ['', [Validators.required]],
+      type: [undefined, [Validators.required]]
+    });
   }
 
 }

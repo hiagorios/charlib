@@ -8,6 +8,6 @@
 </div>
 <div class="sidebar-section-content" [ngClass]="{'expanded': isExpanded}">
   <ng-container *ngFor="let group of groups">
-    <app-sidebar-section-group [name]="group.name" [content]="group.content" [isExpanded]="group.isExpanded"></app-sidebar-section-group>
+    <app-sidebar-section-group [name]="group.name" [content]="group.content" [isExpanded]="group.isExpanded" [type]="type"></app-sidebar-section-group>
   </ng-container>
 </div>

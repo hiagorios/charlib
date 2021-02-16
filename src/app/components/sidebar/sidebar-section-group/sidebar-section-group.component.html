@@ -2,7 +2,7 @@
   <p-button (click)="toggleExpanded()" icon="pi pi-play" iconPos="left" styleClass="p-button-rounded p-button-text toggle-button">
   </p-button>
   <strong class="p-text-bold">{{name}}</strong>
-  <p-button (click)="createSheet()" icon="pi pi-plus" iconPos="left" styleClass="p-button-rounded p-button-text add-button">
+  <p-button (click)="addHandler()" icon="pi pi-plus" iconPos="left" styleClass="p-button-rounded p-button-text add-button">
   </p-button>
 </div>
 <ul class="sidebar-section-group-content" [ngClass]="{'expanded': isExpanded}">
@@ -11,4 +11,7 @@
   </li>
 </ul>
 
-<app-create-sheet [visible]="isCreating"></app-create-sheet>
+<app-create-sheet *ngIf="isSheetGroup(); else addImage" [visible]="isAdding" (closeDialog)="isAdding = false"></app-create-sheet>
+<ng-template #addImage>
+  <!-- TODO: image add component -->
+</ng-template>

@@ -12,6 +12,7 @@ export class SidebarComponent implements OnInit {
     {
       headerText: 'FICHAS',
       isExpanded: true,
+      type: 'SHEET',
       groups: [
         {
           name: 'D&D',
@@ -26,6 +27,7 @@ export class SidebarComponent implements OnInit {
     },
     {
       headerText: 'IMAGENS',
+      type: 'IMAGE',
       groups: [
         {
           name: 'PokeUESC',
@@ -37,7 +39,7 @@ export class SidebarComponent implements OnInit {
         }
       ]
     }
-  ]
+  ];
 
   constructor() { }
 
