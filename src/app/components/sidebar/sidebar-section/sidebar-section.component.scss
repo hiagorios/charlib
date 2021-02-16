@@ -3,12 +3,23 @@
     background-color: var(--color-secondary);
     padding: 0 0.5rem;
     height: 2rem;
-    .p-button {
-      background-color: transparent;
-      border: none;
-      &:hover {
-        background-color: transparent;
+    &.expanded {
+      ::ng-deep {
+        .toggle-button .p-button-icon {
+          transform: rotate(90deg);
+        }
       }
+    }
+    &:hover {
+      background-color: var(--color-light-translucid);
+      cursor: pointer;
+    }
+  }
+  .sidebar-section-content {
+    overflow: hidden;
+    display: none;
+    &.expanded {
+      display: block;
     }
   }
 }

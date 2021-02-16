@@ -23,9 +23,13 @@ export class SidebarSectionGroupComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  createSheet() {
+  createSheet(): void {
     this.isCreating = true;
     // TODO
+  }
+
+  toggleExpanded(): void {
+    this.isExpanded = !this.isExpanded;
   }
 
 }

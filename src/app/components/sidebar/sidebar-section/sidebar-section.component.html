@@ -1,14 +1,13 @@
-<div class="sidebar-section-header p-d-flex p-ai-center p-jc-between">
-  <button (click)="toggleExpanded()" type="button" pButton icon="pi pi-play" iconPos="left" class="p-button-rounded"
-    styleClass="add-button">
-  </button>
+<div class="sidebar-section-header p-d-flex p-ai-center p-jc-between" [ngClass]="{'expanded': isExpanded}">
+  <p-button (click)="toggleExpanded()" icon="pi pi-play" iconPos="left"
+    styleClass="toggle-button p-button-rounded p-button-text">
+  </p-button>
   <strong class="p-text-bold">{{headerText}}</strong>
-  <button (click)="createGroup()" type="button" pButton icon="pi pi-plus" iconPos="left" class="p-button-rounded"
-    styleClass="add-button">
-  </button>
+  <p-button (click)="createGroup()" icon="pi pi-plus" iconPos="left" styleClass="p-button-rounded p-button-text add-button">
+  </p-button>
 </div>
-<div class="sidebar-section-content">
+<div class="sidebar-section-content" [ngClass]="{'expanded': isExpanded}">
   <ng-container *ngFor="let group of groups">
-    <app-sidebar-section-group [name]="group.name" [content]="group.content"></app-sidebar-section-group>
+    <app-sidebar-section-group [name]="group.name" [content]="group.content" [isExpanded]="group.isExpanded"></app-sidebar-section-group>
   </ng-container>
 </div>

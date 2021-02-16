@@ -15,6 +15,7 @@ export class SidebarComponent implements OnInit {
       groups: [
         {
           name: 'D&D',
+          isExpanded: true,
           content: ['Carlos Magno', 'Muriel']
         },
         {
@@ -25,7 +26,6 @@ export class SidebarComponent implements OnInit {
     },
     {
       headerText: 'IMAGENS',
-      isExpanded: true,
       groups: [
         {
           name: 'PokeUESC',

@@ -1,10 +1,11 @@
-<div class="sidebar-section-group-header p-d-flex p-ai-center p-jc-between">
-  <em class="pi pi-play"></em>
+<div class="sidebar-section-group-header p-d-flex p-ai-center p-jc-between" [ngClass]="{'expanded': isExpanded}">
+  <p-button (click)="toggleExpanded()" icon="pi pi-play" iconPos="left" styleClass="p-button-rounded p-button-text toggle-button">
+  </p-button>
   <strong class="p-text-bold">{{name}}</strong>
-  <button (click)="createSheet()" type="button" pButton icon="pi pi-plus" iconPos="left" class="p-button-rounded" styleClass="add-button">
-  </button>
+  <p-button (click)="createSheet()" icon="pi pi-plus" iconPos="left" styleClass="p-button-rounded p-button-text add-button">
+  </p-button>
 </div>
-<ul>
+<ul class="sidebar-section-group-content" [ngClass]="{'expanded': isExpanded}">
   <li *ngFor="let item of content" class="sidebar-section-group-item">
     {{item}}
   </li>
