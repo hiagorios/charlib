@@ -1,0 +1,11 @@
+{
+  "general": {
+    "create": "Criar",
+    "nevermind": "Deixa pra la"
+  },
+  "sheet": {
+    "name": "Nome da ficha",
+    "type": "Tipo da ficha",
+    "new": "Nova ficha"
+  }
+}

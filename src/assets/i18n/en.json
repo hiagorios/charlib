@@ -1,0 +1,11 @@
+{
+  "general": {
+    "create": "Create",
+    "nevermind": "Nevermind"
+  },
+  "sheet": {
+    "name": "Sheet name",
+    "type": "Sheet type",
+    "new": "New sheet"
+  }
+}
