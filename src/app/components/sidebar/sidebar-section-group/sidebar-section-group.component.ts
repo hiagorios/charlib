@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { SidebarSectionType } from '../model/sidebar-section';
+import { GroupType } from 'src/app/model/group-type';
 
 @Component({
   selector: 'app-sidebar-section-group',
@@ -18,7 +18,7 @@ export class SidebarSectionGroupComponent implements OnInit {
   content: string;
 
   @Input()
-  type: SidebarSectionType;
+  type: GroupType;
 
   isAdding = false;
 
@@ -33,7 +33,6 @@ export class SidebarSectionGroupComponent implements OnInit {
 
   toggleExpanded(): void {
     this.isExpanded = !this.isExpanded;
-    console.log(this.isAdding);
   }
 
   isSheetGroup(): boolean {

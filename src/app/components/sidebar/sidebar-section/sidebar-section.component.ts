@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { GroupType } from 'src/app/model/group-type';
 import { SidebarGroupedContent } from '../model/sidebar-grouped-content';
-import { SidebarSectionType } from '../model/sidebar-section';
 
 @Component({
   selector: 'app-sidebar-section',
@@ -9,14 +9,10 @@ import { SidebarSectionType } from '../model/sidebar-section';
 })
 export class SidebarSectionComponent implements OnInit {
 
-  @Input()
-  isExpanded = false;
+  isExpanded = true;
 
   @Input()
   headerText: string;
-
-  @Input()
-  type: SidebarSectionType;
 
   @Input()
   groups: SidebarGroupedContent[];

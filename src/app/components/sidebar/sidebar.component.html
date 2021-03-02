@@ -1,6 +1,6 @@
 <div class="sidebar-wrapper">
-  <ng-container *ngFor="let section of sections">
-    <app-sidebar-section [isExpanded]="section.isExpanded" [type]="section.type" [headerText]="section.headerText" [groups]="section.groups">
-    </app-sidebar-section>
-  </ng-container>
+  <app-sidebar-section [groups]="sheetSectionContent" [headerText]="'general.sheets' | translate | uppercase">
+  </app-sidebar-section>
+  <app-sidebar-section [groups]="imageSectionContent" [headerText]="'general.images' | translate | uppercase">
+  </app-sidebar-section>
 </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SidebarSection } from './model/sidebar-section';
+import { GroupQuery } from 'src/app/state/group/group.query';
+import { SidebarGroupedContent } from './model/sidebar-grouped-content';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,43 +9,16 @@ import { SidebarSection } from './model/sidebar-section';
 })
 export class SidebarComponent implements OnInit {
 
-  sections: SidebarSection[] = [
-    {
-      headerText: 'FICHAS',
-      isExpanded: true,
-      type: 'SHEET',
-      groups: [
-        {
-          name: 'D&D',
-          isExpanded: true,
-          content: ['Carlos Magno', 'Muriel']
-        },
-        {
-          name: 'FATE',
-          content: ['Chico Bruno', 'Dremmor', 'Arthur']
-        }
-      ]
-    },
-    {
-      headerText: 'IMAGENS',
-      type: 'IMAGE',
-      groups: [
-        {
-          name: 'PokeUESC',
-          content: ['Pikachu capiroto', 'NPC 1']
-        },
-        {
-          name: 'Usar algum dia',
-          content: ['Biel desenho', 'Paladino cyberpunk']
-        }
-      ]
-    }
-  ];
+  sheetSectionContent: SidebarGroupedContent[];
+  imageSectionContent: SidebarGroupedContent[];
 
-  constructor() { }
+  constructor(private groupQuery: GroupQuery) { }
 
   ngOnInit(): void {
-
+    this.groupQuery.sidebarGroups$.subscribe(groups => {
+      this.sheetSectionContent = groups.filter(g => g.type === 'SHEET');
+      this.imageSectionContent = groups.filter(g => g.type === 'IMAGE');
+    });
   }
 
 }

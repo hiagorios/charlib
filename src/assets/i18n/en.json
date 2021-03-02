@@ -1,7 +1,11 @@
 {
   "general": {
     "create": "Create",
-    "nevermind": "Nevermind"
+    "nevermind": "Nevermind",
+    "sheet": "Sheet",
+    "sheets": "Sheets",
+    "image": "Image",
+    "images": "Images"
   },
   "sheet": {
     "name": "Sheet name",
